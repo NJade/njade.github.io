@@ -17,6 +17,7 @@ WORK_DIR="$(dirname "$(dirname "$(realpath "$0")")")"
 CONTAINER=.container
 SYNC_TOOL=_scripts/sh/sync_monitor.sh
 
+install_cmd="bundle install --path vendor/bundle"
 cmd="bundle exec jekyll s -l -o"
 realtime=false
 
@@ -94,6 +95,7 @@ main() {
   fi
 
   echo "\$ $cmd"
+  eval "$install_cmd"
   eval "$cmd"
 }
 

@@ -4,17 +4,17 @@
 #  © 2020 Cotes Chung
 #  MIT Licensed
 
-# -
-#   type: github
-#   icon: 'fab fa-github-alt'
-# -
+-
+  type: github
+  icon: 'fab fa-github-alt'
+-
 # #   type: twitter
 # #   icon: 'fab fa-twitter'
-# # -
-#   type: email
-#   icon: 'fas fa-envelope'
-#   noblank: true            # open link in current tab
-# -
+-
+  type: email
+  icon: 'fas fa-envelope'
+  noblank: true            # open link in current tab
+-
 #   type: rss
 #   icon: 'fas fa-rss'
 #   noblank: true
