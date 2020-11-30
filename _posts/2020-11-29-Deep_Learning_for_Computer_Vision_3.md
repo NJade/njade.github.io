@@ -81,10 +81,10 @@ tags: [Deep Learning, Deep Learning for Computer Vision]
 - SVM은 스코어로 제공하지만 결과가 확률로 표현되길 기대한다.
 - Softmax function을 통해 확률로 변환할 수 있다.
 - Softmax function은 e^s_k / sum(e^s_i) 이다.
-- cross entropy loss는 -log(Y=y_i|X=x_i)로 표현한다.
+- cross entropy loss는 -log(Y=y_i\|X=x_i)로 표현한다.
 - cross entropy loss를 통한 추정량은 MLE와 동일하게 된다.
 - 이 loss의 유도는 Kullback-Leibler divergence로 유도가 된다.
-- Kullback-Leibler divergence는 D_KL(P||Q) = sum(P(y)*log(P(y)/Q(y)))이다. (Hogg 책을 펼쳐보자...)
+- Kullback-Leibler divergence는 D_KL(P\|\|Q) = sum(P(y)*log(P(y)/Q(y)))이다. (Hogg 책을 펼쳐보자...)
 - minimum은 0이고 maximum은 infinite이다.
 - 모든 스코어를 완전 랜덤(N(0, sigma))으로 추출할 시 loss의 기댓값은 log(C)가 된다.
 
