@@ -11,10 +11,14 @@ tags: [Deep Learning, Deep Learning for Computer Vision]
 ---
 
 ## Linear Classifier
+---
 - Linear Classifier를 쌓은 것이 Neural Network가 된다.
 - CIFAR10(50000 train data, 10000 test data, 32x32x3 image) 데이터를 사용할 계획이다.
 
+---
+
 ## Algebraic Viewpoint
+---
 - f(x, W)로 표시될 것이며 W는 가중치 혹은 파라미터라고 표현한다.
 - f(x, W) = Wx + b이며 CIFAR10 기준으로 f(x, W)와 b는 (10,) vector이며 W는 (10, 3072) x는 (3072,) 벡터이다.
 - b는 가중치
@@ -22,24 +26,36 @@ tags: [Deep Learning, Deep Learning for Computer Vision]
 - b는 x의 마지막에 1을 추가하고 W에 붙일 수 있다. (선형회귀에서 b0항)
 - f(cx, W) = W(cx) = c * f(x, W) 로 표기되어 이미지의 전체 값에 0.5를 곱하면 스코어는 바뀌더라도 예측값은 바뀌지 않는다.
 
+---
+
 ## Visual Viewpoint
+---
 - 학습된 W를 이미지로 변경하면 data의 라벨만큼의 이미지가 나오게 되고 이것은 template으로 볼 수 있다.
 - 이런 template를 뽑아보면 어떤 경우에 예측에 실패할지 예측할 수 있다.
 - template은 오직 하나만 있기 때문에 데이터의 여러 형태를 하나의 template에 반영한다.
 
+---
+
 ## Geometric Viewpoint
+---
 - 픽셀 하나 혹은 두개에 대해서 값을 바꿔보며 그래프를 그리면 선형직선의 형태를 가지게 된다.
 - 이 직선은 template이 되게 되고 이 직선에 직각인 방향으로 가게 되면 라벨의 점수가 높아진다.
 - 이러한 직선이 라벨을 나누는 hyperplain이다.
 - hyperplain은 각 라벨을 나누는 평면이다.
 - hyperplain에 대한 자세한 내용은 SVM(Support Vector Machin)을 찾아보자.
 
+---
+
 ## Hard Case
+---
 - XOR 형태의 데이터
 - 도넛이든 단순 원이든 원형 데이터가 존재하는 경우
 - 위의 경우는 단순 선형직선으로 나눌 수가 없다.
 
+---
+
 ## Choose a good W
+---
 - loss function을 잘 선택해서 w를 최적화한다.
 - loss function은 모델이 얼마나 잘 동작하는지 보여주는 함수이다.
 - loss가 낮을수록 잘 동작하는 것을 의미한다.
@@ -47,7 +63,10 @@ tags: [Deep Learning, Deep Learning for Computer Vision]
 - 반대로 높은 점수일 수록 잘 동작하는 것을 의미하는 함수는 reward, profit, utility, fitness function 등으로 부른다.
 - 각각의 데이터에 대해 loss를 계산 후 전체 평균을 계산하여 최종 loss로 사용한다.
 
+---
+
 ## Hinge Loss
+---
 - Multiclass SVM은 Hinge Loss를 사용한다.
 - 올바르게 동작한 경우는 0을 나머지는 선형으로 증가한다.
 - s = f(x_i, W), class score
@@ -60,7 +79,10 @@ tags: [Deep Learning, Deep Learning for Computer Vision]
 - sum대신에 mean을 사용하더라도 동일한 결과를 보인다.
 - hinge loss를 제곱한 경우는 위와 다르게 non-linear 변환이기 때문에 결과가 바뀌게 된다.
 
+---
+
 ## Regularization
+---
 - L = 0이 되게하는 W는 유일하지 않다. > 선형함수이기 때문에 W에 상수를 곱하여도 동일한 결과를 제공한다.
 - L = 0을 만족하는 cW 중 무엇을 사용할 것인지를 정해햐하며 이를 정해줄 방법이 regularization이다.
 - 이 정규화는 training data에만 잘 적합되는 것을 막아준다.
@@ -76,7 +98,10 @@ tags: [Deep Learning, Deep Learning for Computer Vision]
 - L1은 반대로 하나로 가중치를 뭉쳐주게 해준다. > 모델 압축 등에 도움을 준다.
 - 간단한 모델이 해석과 추가적인 데이터 등에 더 robust한 결과를 보여주므로 정규화를 통해 모델을 간단하게 만드는 것이 좋다.
 
+---
+
 ## Cross-Entropy Loss
+---
 - Multinomial logistic Regression에서 사용한다.
 - SVM은 스코어로 제공하지만 결과가 확률로 표현되길 기대한다.
 - Softmax function을 통해 확률로 변환할 수 있다.
@@ -88,11 +113,16 @@ tags: [Deep Learning, Deep Learning for Computer Vision]
 - minimum은 0이고 maximum은 infinite이다.
 - 모든 스코어를 완전 랜덤(N(0, sigma))으로 추출할 시 loss의 기댓값은 log(C)가 된다.
 
+---
+
 ## Hinge Loss VS Cross-Entropy Loss
+---
 - Hinge는 0이 되지만 cross-entropy는 절대 0이 되지 않는다.
 - 이 차이는 Cross-Entropy Loss를 사용한 모델이 계속 학습되도록 한다.
 
+---
 
 # Reference
+---
 - [Deep Learning for Computer Vision(EECS 498-007/598-005)](https://web.eecs.umich.edu/~justincj/teaching/eecs498/FA2020/)
 - [Youtube](https://www.youtube.com/watch?v=dJYGatp4SvA&list=PL5-TkQAfAZFbzxjBHtzdVCWE0Zbhomg7r)

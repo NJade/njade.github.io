@@ -52,7 +52,10 @@ em.remove(member) // 삭제 상태
 2. 트랜잭션 커밋
 3. JPQL 쿼리 실행 시
 
+---
+
 ## 준영속 상태
+---
 * 영속성 컨텍스트에서 분리되어 영속성 컨텍스트가 제공하는 기능 지원을 받지 못 함.
 ```java
 em.detach(object) // 하나
@@ -61,5 +64,8 @@ em.close()
 ```
 * 준영속 상태의 entity를 조회하면 select 쿼리가 다시 날라감.
 
+---
+
 # Reference
+---
 - [인프런](https://www.inflearn.com/course/ORM-JPA-Basic)
