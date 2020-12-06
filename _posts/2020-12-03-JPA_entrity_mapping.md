@@ -56,6 +56,7 @@ tags: [JPA]
 * @Column(nullable = false, length = 10, unique = true) 등으로 제약조건을 추가할 수 있음.
 * @Table(uniqueConstraints = (@UniqueCoonstraint(name = "NAME_AGE_UNIQUE", columnNames={"NAME", "AGE}))) > 유니크 제약조건
 * DDL 생성 기능은 DDL 자동생성에만 영향을 주고 JPA 실로직에서는 사용되지 않는다.
+
 ### 주의점
 * 운영장비에서는 절대 create, create-drop, update를 사용하면 안됨.
 * 개발 초기에는 create or update
@@ -71,6 +72,7 @@ tags: [JPA]
 * @Temporal()을 통해 DATE, TIME, TIMESTAMP 세가지에 대해 맵핑이 가능하다.
 * @Lob 큰 데이터를 맵핑 BLOB, CLOB emd
 * @Transient 컬럼 맵핑을 하고 싶지 않을 때 사용
+
 ### Column 
 * name: 컬럼 이름
 * insertable, updatable: 등록, 변경 가능 여부
@@ -79,17 +81,21 @@ tags: [JPA]
 * columnDefinition: DB 맵핑 조건을 직접 걸어줄 수 있다.
 * length: DDL에서 길이 제약조건을 걸어줄 수 있다.
 * percision, scale: float, double 등에서 사용
+
 ### Enumerated
 * enum을 맵핑
 * ORDINAL(enum순서로 저장)과 STRING(문자로 저장)이 있고 ORDINAL이 기본값이다.
 * 하지만 ORDINAL을 사용하지 않는 것이 좋다.
+
 ### Temporal
 * 날짜에 맵핑, 최근에는 필요가 없음.
 * LocalDate, LocalDateTime 등의 자바 클래스를 사용하면 알아서 해줌.
+
 ### Lob
 * 지정할 수 있는 속성이 없음.
 * String, Char 등은 CLOB
 * 나머지는 BLOB
+
 ### Transient
 * 필드에 맵핑하지 않음.
 * 메모리에서만 사용하는 경우에 사용
@@ -112,6 +118,7 @@ tags: [JPA]
     * TABLE: 키 생성 전용 테이블을 하나 만들어서 시퀀스를 흉내, 모든 DB에 사용이 가능하지만 성능이 안 좋음. @TableGenerator가 존재
         * sequence와 거의 동일
     * SEQUENCE와 TABLE의 경우 여러 어플리케이션을 띄워도 문제가 없음. 1번 서버는 1~50, 2번 서버는 51~100, ... 으로 할당
+
 ### 식별자 전략
 * 기본키 제약 조건: null x, 유일, 변하면 안된다.
 * 미래까지 이 조건을 만족하는 자연키느 찾기 어려움.
