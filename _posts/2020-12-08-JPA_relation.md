@@ -21,6 +21,7 @@ tags: [JPA]
 * Entity를 중심으로 ManyToOne, OneToMany를 선언
 * ManyToOne 선언시 @JoinColumn을 통해 FK 선언이 필요
 * OneToMany 선언시 mappedBy property를 상대 entity의 이름으로 선언해주어야 함.
+
 ```java
 public class Member {
     @ManyToOne
@@ -33,6 +34,7 @@ public class Team {
     private List<Member> members = new ArrayList<>();
 }
 ```
+
 ### 테이블 중심 모델링
 * 객체를 테이블에 맞춰 객체가 FK를 가지고 있도록 데이터 중심으로 설계하면 협력관계를 만들 수 없다.
 * 테이블은 FK로 join해서 연관 테이블을 찾고 객체는 참조를 사용해서 연관객체를 찾는다.
@@ -45,10 +47,12 @@ public class Team {
 ## 양방향 연관관계와 연관관계의 주인
 ---
 * 객체는 단방향 연관관계가 2개이다.
+
 ```java
 a.getB();
 b.getA();
 ```
+
 * 테이블은 양방향 연관관계로 표현할 수 있다. > 키 하나로 조인을 통해 조회가 가능하다.
 * 이 차이로 인해 두 객체 중 어떤 값을 통해 테이블을 업데이트할지 혼란이 생긴다.
 * 위 a와 b에서 a.setB()와 b.setA() 중 어떤 것이 테이블에 영향을 줄지 명확하지 않다.
@@ -69,6 +73,7 @@ b.getA();
 * 연관관계 편의 method는 한 쪽만 생성하는 것이 좋다.
 * 양방향 매핑시에 무한 루프가 걸리게 될 수 있다.
 * toString()을 method를 자동생성하면 서로 호출해서 문제가 된다. 
+
 ```java
 class A {
     ...
@@ -84,6 +89,7 @@ class B {
     }
 }
 ```
+
 * Entity를 컨트롤러에서 직접반환해버리면 jackson에서 무한루프에 빠진다.
 
 ---
