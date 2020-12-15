@@ -1,5 +1,5 @@
 ---
-title: JPA Relation
+title: JPA Relation 1
 author: Njade
 date: 2020-12-09 05:30:00 +0900
 categories: [JPA]
