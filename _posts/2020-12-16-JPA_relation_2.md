@@ -109,7 +109,7 @@ tags: [JPA]
 * 실무에서 중간 테이블은 단순하지 않으므로 @ManyToMany를 사용하지 말 것.
 * @JoinColumn은 외래키를 맵핑할 때 사용
   * name: 매핑할 외래 키 이름
-  * referencedColumnName: 외래 키가 참조하는 대상 테이블의 컬럼명
+  * referencedColumnName: 외래 키가 참조하는 대상 테이블의 컬럼명
   * foreignKey(DDL): 외래키 제약조건을 직접 지정
   * 이외에는 @Column과 동일
 * @ManyToOne
