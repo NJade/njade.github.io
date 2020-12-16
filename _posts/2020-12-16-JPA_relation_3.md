@@ -1,7 +1,7 @@
 ---
 title: JPA Relation 3
 author: Njade
-date: 2020-12-16 23:25:00 +0900
+date: 2020-12-16 22:50:00 +0900
 categories: [JPA]
 tags: [JPA]
 ---
