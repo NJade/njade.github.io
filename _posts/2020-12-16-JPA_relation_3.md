@@ -45,7 +45,7 @@ tags: [JPA]
 
 ### 단일 테이블 전략
 * stragy=InheritanceType.SINGLE_TABLE
-* DTYPE이 무조건 있어야 한다.
+* DTYPE이 무조건 있어야 한다.
 
 #### 장점
 * 조인이 필요없으므로 일반적으로 조회 성능이 빠름.
