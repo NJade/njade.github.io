@@ -1,7 +1,7 @@
 ---
-title: JPA Proxy and Relation
+title: JPA value type
 author: Njade
-date: 2020-12-17 01:30:00 +0900
+date: 2021-01-02 19:30:00 +0900
 categories: [JPA]
 tags: [JPA]
 ---
