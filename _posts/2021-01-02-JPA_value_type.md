@@ -1,5 +1,5 @@
 ---
-title: JPA value type
+title: JPA Value Type
 author: Njade
 date: 2021-01-02 19:30:00 +0900
 categories: [JPA]
@@ -86,6 +86,8 @@ tags: [JPA]
 ---
 * equals나 hashcode 구현 시 프록시를 고려하여 getter를 사용하는 것이 좋다.
 * 임베디드 타입으로 만든다면 공통의 룰과 공통의 비지니스 로직을 응집시킬 수 있다.
+
+---
 
 # Reference
 ---
