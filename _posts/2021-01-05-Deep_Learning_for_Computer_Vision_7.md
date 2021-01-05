@@ -28,7 +28,7 @@ tags: [Deep Learning, Deep Learning for Computer Vision]
 * 예를 들어 3x32x32 데이터에 6(filter의 갯수)x3(depth)x5x5 convolution layer를 적용하면 6x28x28이 된다.
 * 높이와 너비는 변화하지만 이미지의 구조는 유지가 된다.
 * 하나의 이미지만 계산을 하기보다 여러 이미지로 배치 계산을 할 수 있다.
-* 일반적인 형태는 인풋은 N x C_in x H x W 이며 Convolution Layer는 C_out x C_in x K_w x K_h이며 아웃풋은 N x C_out x H` x W` 이다.
+* 일반적인 형태는 인풋은 N x C_in x H x W 이며 Convolution Layer는 C_out x C_in x K_w x K_h이며 아웃풋은 N x C_out x H' x W' 이다.
 * 이런 convolution layer를 stacking할 수 있다.
 * bias는 convolution layer의 갯수만큼만 가지게 된다. (C_out x 1)
 * CNN의 첫 번째 레이어는 보통 엣지를 학습하게 된다.
